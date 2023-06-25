@@ -1,0 +1,6 @@
+<% unless logged_in? %>
+  <%= link_to 'ログイン', login_path %>
+  <%= link_to 'サインアップ', signup_path %>
+<% else %>
+  <%= link_to 'ログアウト', logout_path %> 
+<% end %>
