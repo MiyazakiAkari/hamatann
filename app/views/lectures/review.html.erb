@@ -1,0 +1,64 @@
+<main role="main">
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+<div class="row">
+  <% @review.each do |review| %>
+    <div class="col-md-12">
+      <div class="card mb-4 shadow-sm">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <!-- ここに画像を表示できます -->
+            <%= @lecture.title %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= review.title %></h5>
+              <p class="card-text">講師: <%= review.teacher %></p>
+              <p class="card-text">学科: <%= review.course %></p>
+              <p class="card-text">学期: <%= review.semester %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">詳細</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                  <a href="/lectures/<%= lecture.id %>/review" class="btn btn-lg btn-outline-secondary">レビューを見る</a>
+                </div>
+                <small class="text-muted">編集済みかどうか書く</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+このコードでは、各カードを1列に配置し、カード内のコンテンツを左右に分割して表示します。左側には画像が表示できるスペースを確保していますが、画像がない場合は適切なコンテンツに置き換えてください。
+
+このように変更することで、要素が横に長く表示され、縦に並べることができます。デザインに合わせて調整してください。
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="../../assets/js/vendor/holder.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script>
+  window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
+</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script><script src="/docs/4.3/assets/js/vendor/anchor.min.js"></script>
+<script src="/docs/4.3/assets/js/vendor/clipboard.min.js"></script>
+<script src="/docs/4.3/assets/js/vendor/bs-custom-file-input.min.js"></script>
+<script src="/docs/4.3/assets/js/src/application.js"></script>
+<script src="/docs/4.3/assets/js/src/search.js"></script>
+<script src="/docs/4.3/assets/js/src/ie-emulation-modes-warning.js"></script>
+  
+
+<svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="17" style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg></body>

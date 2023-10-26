@@ -1,0 +1,5 @@
+<%= form_for @review do |f| %>
+  <%= f.hidden_field :lecture_id, value: @lecture.id %>
+  <%= f.text_field :body, class: "text-field" %>
+  <%= f.submit '投稿', class: "submit-btn" %>
+<% end %>

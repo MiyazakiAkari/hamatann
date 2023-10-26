@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  devise_for :users
+  root 'lectures#home'
+  resources :lectures do
+    member do
+      get :review
+    end
+  end
 end

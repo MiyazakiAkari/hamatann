@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_25_230852) do
+ActiveRecord::Schema.define(version: 2023_10_25_233703) do
+
+  create_table "lectures", force: :cascade do |t|
+    t.integer "semester", null: false
+    t.string "day", null: false
+    t.integer "time", null: false
+    t.string "course", null: false
+    t.string "title", null: false
+    t.string "faculty", null: false
+    t.string "teacher", null: false
+    t.boolean "edited", default: false, null: false
+    t.string "where", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lectures_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.string "star"
+    t.integer "lecture_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lecture_id"], name: "index_reviews_on_lecture_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -24,4 +52,7 @@ ActiveRecord::Schema.define(version: 2023_10_25_230852) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lectures", "users"
+  add_foreign_key "reviews", "lectures"
+  add_foreign_key "reviews", "users"
 end

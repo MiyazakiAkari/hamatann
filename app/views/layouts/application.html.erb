@@ -1,21 +1,17 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Hamatann</title>
+    <title>BootstrapRails7</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_tag %>
   </head>
-
-
-
   <body>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <%= render "shared/header" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  <%= render "shared/footer" %>
   </body>
 </html>
