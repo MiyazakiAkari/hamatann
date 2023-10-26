@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2023_10_25_233703) do
 
   create_table "lectures", force: :cascade do |t|
-    t.integer "semester", null: false
+    t.string "semester", null: false
     t.string "day", null: false
-    t.integer "time", null: false
+    t.string "time", null: false
     t.string "course", null: false
     t.string "title", null: false
     t.string "faculty", null: false
