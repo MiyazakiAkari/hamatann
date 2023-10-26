@@ -12,6 +12,10 @@
         <p class="card-text">学科: <%= @lecture.course %></p>
         <p class="card-text">編集: <%= @lecture.edited %></p>
         <p class="card-text">教室 <%= @lecture.where %></p>
+        <% if @lecture.edited == true %>
+          <p class="card-text">編集済み</p>
+          <p class="card-text">更新したユーザー:<%= @lecture.updater.name %></p>
+        <% end %>
       </div>
     </div>
 

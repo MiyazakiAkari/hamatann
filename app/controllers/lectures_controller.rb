@@ -44,6 +44,8 @@ class LecturesController < ApplicationController
         @lecture = Lecture.find(params[:id])
         if @lecture.update_attributes(params[:id])
           flash[:success] = "授業の更新に成功しました"
+          edited = true
+          @lecture.updater = current_user
           redirect_to @lecture
         else
           flash[:error] = "授業の更新に失敗しました"

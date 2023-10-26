@@ -8,7 +8,10 @@
     <%= javascript_tag %>
   </head>
   <body>
-  <%= render "shared/header" %>
+  <% flash.each do |message_type, message| %>
+    <%= content_tag :div, message, class: message_type %>
+  <% end %>
+    <%= render "shared/header" %>
     <div class="container">
       <%= yield %>
     </div>
