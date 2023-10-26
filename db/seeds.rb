@@ -57,3 +57,9 @@ Lecture.create!(
   where: "Classroom 104",
   user_id: 1
 )
+
+Review.create(title: "授業のタイトル1", body: "この授業は素晴らしかったです。", star: "5", lecture_id: 1, user_id: 1)
+Review.create(title: "授業のタイトル2", body: "授業内容に改善の余地があります。", star: "3", lecture_id: 1, user_id: 1)
+Review.create(title: "授業のタイトル3", body: "授業内容に改善の余地があります。", star: "3", lecture_id: 1, user_id: 1)
+Review.create(title: "授業のタイトル4", body: "授業内容に改善の余地があります。", star: "3", lecture_id: 1, user_id: 1)
+# 他のレビューデータを追加...

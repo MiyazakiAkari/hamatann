@@ -15,14 +15,12 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title"><%= review.title %></h5>
-              <p class="card-text">講師: <%= review.teacher %></p>
-              <p class="card-text">学科: <%= review.course %></p>
-              <p class="card-text">学期: <%= review.semester %></p>
+              <p class="card-text">内容: <%= review.body %></p>
+              <p class="card-text">星: <%= review.star %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">詳細</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">削除</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
-                  <a href="/lectures/<%= lecture.id %>/review" class="btn btn-lg btn-outline-secondary">レビューを見る</a>
                 </div>
                 <small class="text-muted">編集済みかどうか書く</small>
               </div>
@@ -33,9 +31,6 @@
     </div>
   <% end %>
 </div>
-このコードでは、各カードを1列に配置し、カード内のコンテンツを左右に分割して表示します。左側には画像が表示できるスペースを確保していますが、画像がない場合は適切なコンテンツに置き換えてください。
-
-このように変更することで、要素が横に長く表示され、縦に並べることができます。デザインに合わせて調整してください。
 
 
 
