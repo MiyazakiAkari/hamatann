@@ -2,33 +2,47 @@
 
   <div class="album py-5 bg-light">
     <div class="container">
+     <%= link_to 'この授業のレビューを書く',  reviews_new_lecture_path, class: 'btn btn-primary mb-3' %>
 
 <div class="row">
-  <% @review.each do |review| %>
-    <div class="col-md-12">
-      <div class="card mb-4 shadow-sm">
-        <div class="row no-gutters">
-          <div class="col-md-4">
-            <!-- ここに画像を表示できます -->
-            <%= @lecture.title %>
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title"><%= review.title %></h5>
-              <p class="card-text">内容: <%= review.body %></p>
-              <p class="card-text">星: <%= review.star %></p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">削除</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+  <% if @review.present? %>
+    <% @review.each do |review| %>
+      <div class="col-md-12">
+        <div class="card mb-4 shadow-sm">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <%= @lecture.title %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title"><%= review.title %></h5>
+                <p class="card-text">内容: <%= review.body %></p>
+                <p class="card-text">星: <%= review.star %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">削除</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">編集</button>
+                  </div>
+                  <%if review.edited == true %>
+                    <small class="text-muted">編集済み</small>
+                  <% end %>
                 </div>
-                <small class="text-muted">編集済みかどうか書く</small>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
+  <% else %>
+      <div class="col-md-12">
+        <div class="card mb-4 shadow-sm">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              現在レビューはありません
+            </div>
+          </div>
+        </div>
+      </div>
   <% end %>
 </div>
 
