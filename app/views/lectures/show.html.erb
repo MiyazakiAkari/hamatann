@@ -9,6 +9,7 @@
         <p class="card-text">授業名: <%= @lecture.title %></p>
         <p class="card-text">曜日: <%= @lecture.day%></p>
         <p class="card-text">コマ: <%= @lecture.time %></p>
+        <p class="card-text">学部: <%= @lecture.faculty %></p>
         <p class="card-text">学科: <%= @lecture.course %></p>
         <p class="card-text">編集: <%= @lecture.edited %></p>
         <p class="card-text">教室 <%= @lecture.where %></p>
@@ -26,6 +27,15 @@
     <div class="mt-4">
       <%= link_to '一覧に戻る', lectures_path, class: 'btn btn-secondary' %>
     </div>
+
+    <div class="mt-4">
+      <%= link_to '編集', edit_lecture_path, class: 'btn btn-secondary' %>
+    </div>
+    <% if @lecture.user_id == current_user.id %>
+      <div class="mt-4">
+        <%= link_to '削除', lecture_path, method: :delete, class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
   </div>
 
   <!-- Bootstrap JavaScriptを読み込む -->

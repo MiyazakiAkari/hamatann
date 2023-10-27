@@ -8,13 +8,21 @@
     <%= javascript_tag %>
   </head>
   <body>
-  <% flash.each do |message_type, message| %>
-    <%= content_tag :div, message, class: message_type %>
-  <% end %>
+    <% if flash[:notice].present? %>
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <% if flash[:alert].present? %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
     <%= render "shared/header" %>
     <div class="container">
       <%= yield %>
     </div>
-  <%= render "shared/footer" %>
+    <%= render "shared/footer" %>
   </body>
 </html>

@@ -9,6 +9,7 @@ class LecturesController < ApplicationController
     def show
         @lecture = Lecture.find(params[:id])
         @review = Review.new
+        @user = @lecture.user_id
     end
 
     def new
@@ -16,7 +17,7 @@ class LecturesController < ApplicationController
     end
     
     def create
-        @lecture = Lecture.new(params[:id])
+        @lecture = current_user.lecture.build(lecture_params)
         if @lecture.save
           flash[:success] = "授業が登録されました"
           redirect_to @lecture
@@ -33,7 +34,7 @@ class LecturesController < ApplicationController
     
     private
     def lecture_params
-        params.require(:lecture).permit(:semester, :day, :time, :course, :title, :teacher, :edited, :where, :faculty)
+        params.require(:lecture).permit(:semester, :day, :time, :course, :title, :teacher, :edited, :where, :faculty, :user_id)
     end
 
     def edit

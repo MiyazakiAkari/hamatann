@@ -1,8 +1,7 @@
 <body>
   <div class="container">
-    <h1 class="my-4">新しい授業を作成</h1>
-
-    <%= form_for @lecture, html: { class: 'form' } do |f| %>
+    <h1 class="my-4">授業を編集</h1>
+    <%= form_for(@lecture) do |f| %>
       <div class="form-group">
         <%= f.label :授業名 %>
         <%= f.text_field :title, class: "form-control" %>
