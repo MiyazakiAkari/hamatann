@@ -1,0 +1,28 @@
+
+<h1>New Review</h1>
+
+<%= form_for [@lecture, @review], url: reviews_create_lecture_path, method: :post do |f| %>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :star %>
+    <%= f.number_field :star, in: 1..5 %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Create Review' %>
+  </div>
+<% end %>
+
+<!-- Bootstrap JavaScriptを読み込む -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

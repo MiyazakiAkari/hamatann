@@ -5,7 +5,7 @@
      <%= link_to 'この授業のレビューを書く',  reviews_new_lecture_path, class: 'btn btn-primary mb-3' %>
 
 <div class="row">
-  <% if @review.present? %>
+  <% if @review %>
     <% @review.each do |review| %>
       <div class="col-md-12">
         <div class="card mb-4 shadow-sm">
@@ -35,10 +35,12 @@
     <% end %>
   <% else %>
       <div class="col-md-12">
-        <div class="card mb-4 shadow-sm">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              現在レビューはありません
+        <div class="card border mb-4 shadow-sm">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <p>現在レビューはありません</p>
+              </div>
             </div>
           </div>
         </div>

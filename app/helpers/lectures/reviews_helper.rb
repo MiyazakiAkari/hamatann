@@ -1,0 +1,2 @@
+module Lectures::ReviewsHelper
+end

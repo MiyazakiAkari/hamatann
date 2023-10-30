@@ -1,47 +1,19 @@
-  <header class="p-3 bg-primary text-light">
-    <div class="container">
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-        </a>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">hamatan</span>
+      </a>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="<%= root_path %>" class="nav-link px-2 text-white">Home</a></li>
-          <li><a href="<%= lectures_path %>" class="nav-link px-2 text-white">授業一覧</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-        </ul>
-
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="授業名で検索" aria-label="Search">
-        </form>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="<%= root_path %>" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="<%= lectures_path %>" class="nav-link">授業一覧</a></li>
         <% if current_user %>
-          <div class="text-end">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link px-2 text-white" %>
-          </div>
-        <% else %> 
-          <div class="text-end">
-            <a class="nav-link px-2 text-white" href="<%= new_user_session_path %>">ログイン</a>
-            <a class="nav-link px-2 text-white" href="<%= new_user_registration_path %>">新規登録</a>
-          </div>
+          <li class="nav-item"><a href="#" class="nav-link">ログアウト</a></li>
+        <% else %>
+          <li class="nav-item"><a href="#" class="nav-link">ログイン</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">新規登録</a></li>
         <% end %>
-      </div>
-    </div>
-  </header>
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script>
-  window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
-</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script><script src="/docs/4.3/assets/js/vendor/anchor.min.js"></script>
-<script src="/docs/4.3/assets/js/vendor/clipboard.min.js"></script>
-<script src="/docs/4.3/assets/js/vendor/bs-custom-file-input.min.js"></script>
-<script src="/docs/4.3/assets/js/src/application.js"></script>
-<script src="/docs/4.3/assets/js/src/search.js"></script>
-<script src="/docs/4.3/assets/js/src/ie-emulation-modes-warning.js"></script>
-  
-
-</body>
+      </ul>
+    </header>
+</div>
