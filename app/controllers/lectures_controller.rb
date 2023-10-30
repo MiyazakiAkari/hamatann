@@ -1,6 +1,11 @@
 class LecturesController < ApplicationController
+    before_action :authenticate_user!, except: [:index,:home,:show]
     def index
-        @lectures = Lecture.all
+        @lectures = if params[:search]
+            Lecture.where('title LIKE ?', "%#{params[:search]}%")
+        else
+            @lectures = Lecture.all
+        end
     end
 
     def home
@@ -26,11 +31,6 @@ class LecturesController < ApplicationController
           render 'new'
         end
     end
-
-    def review
-        @lecture = Lecture.find(params[:id])
-        @review = @lecture.review
-    end
     
     private
     def lecture_params
@@ -46,7 +46,7 @@ class LecturesController < ApplicationController
         if @lecture.update_attributes(params[:id])
           flash[:success] = "授業の更新に成功しました"
           edited = true
-          @lecture.updater = current_user
+
           redirect_to @lecture
         else
           flash[:error] = "授業の更新に失敗しました"

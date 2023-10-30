@@ -9,10 +9,13 @@
         <li class="nav-item"><a href="<%= root_path %>" class="nav-link active" aria-current="page">Home</a></li>
         <li class="nav-item"><a href="<%= lectures_path %>" class="nav-link">授業一覧</a></li>
         <% if current_user %>
-          <li class="nav-item"><a href="#" class="nav-link">ログアウト</a></li>
+          <li class="nav-item">
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+          <li class="nav-item"><%= link_to 'ユーザー情報更新', edit_user_registration_path, class: "nav-link" %></li>
         <% else %>
-          <li class="nav-item"><a href="#" class="nav-link">ログイン</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">新規登録</a></li>
+          <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: "nav-link" %></li>
+          <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: "nav-link" %></li>
         <% end %>
       </ul>
     </header>

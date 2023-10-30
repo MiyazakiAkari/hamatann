@@ -59,3 +59,9 @@ gem 'devise'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
+gem "importmap-rails"
+gem "turbo-rails"
+gem "stimulus-rails"
+
+gem "dotenv-rails"

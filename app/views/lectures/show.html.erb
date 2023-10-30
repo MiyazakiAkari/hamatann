@@ -11,17 +11,13 @@
         <p class="card-text">コマ: <%= @lecture.time %></p>
         <p class="card-text">学部: <%= @lecture.faculty %></p>
         <p class="card-text">学科: <%= @lecture.course %></p>
-        <p class="card-text">編集: <%= @lecture.edited %></p>
         <p class="card-text">教室 <%= @lecture.where %></p>
-        <% if @lecture.edited == true %>
-          <p class="card-text">編集済み</p>
-          <p class="card-text">更新したユーザー:<%= @lecture.updater.name %></p>
-        <% end %>
+        <p class="card-text">編集: <%= @lecture.edited ? '編集済み' : '未編集' %></p>
       </div>
     </div>
 
     <div class="mt-4">
-      <%= link_to 'レビューを見る', reviews_lecture_path(@lecture), class: 'btn btn-primary' %>
+      <%= link_to 'レビューを見る', reviews_index_lecture_path(@lecture), class: 'btn btn-primary' %>
     </div>
 
     <div class="mt-4">

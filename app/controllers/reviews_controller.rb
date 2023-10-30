@@ -1,7 +1,18 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+    def index
+      @lecture = Lecture.find(params[:id])
+      @review = @lecture.review
+    end
+
     def new
         @lecture = Lecture.find(params[:id])
         @review = Review.new
+    end
+
+    def edit
+      @lecture = Lecture.find(params[:id])
+      @review = Review.find(params[:id])
     end
 
     def create
