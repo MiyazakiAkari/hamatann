@@ -1,7 +1,7 @@
 class ContactsController < ApplicationController
     def new
         @contact = Contact.new
-      end
+    end
     
       # 確認画面を作成する場合はこのような記述になるかと思います。
       # newアクションから入力内容を受け取り、
@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
           render :new
         end
       end
-    　
+    
       # 入力内容に誤りがあった場合、
       # 入力内容を保持したまま前のページに戻るのが当たり前になっているかと思いますが、
       # backアクションを定義することで可能となります。
@@ -49,5 +49,4 @@ class ContactsController < ApplicationController
                       :message
                      )
       end
-    end
 end
