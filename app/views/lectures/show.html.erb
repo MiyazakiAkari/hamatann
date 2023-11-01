@@ -12,7 +12,6 @@
         <p class="card-text">学部: <%= @lecture.faculty %></p>
         <p class="card-text">学科: <%= @lecture.course %></p>
         <p class="card-text">教室 <%= @lecture.where %></p>
-        <p class="card-text">編集: <%= @lecture.edited ? '編集済み' : '未編集' %></p>
       </div>
     </div>
 
@@ -29,7 +28,7 @@
     </div>
     <% if @lecture.user_id == current_user.id %>
       <div class="mt-4">
-        <%= link_to '削除', lecture_path, method: :delete, class: 'btn btn-secondary' %>
+        <%= button_to '削除', lecture_path, method: :delete, class: 'btn btn-secondary' %>
       </div>
     <% end %>
   </div>

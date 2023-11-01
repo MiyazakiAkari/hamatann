@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2023_10_30_224910) do
   create_table "contacts", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
-    t.integer "subject", default: 0, null: false
+    t.string "subject", default: "0", null: false
     t.text "message", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2023_10_30_224910) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "updatrer"
     t.index ["user_id"], name: "index_lectures_on_user_id"
   end
 

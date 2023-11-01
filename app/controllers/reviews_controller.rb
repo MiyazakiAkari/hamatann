@@ -1,22 +1,34 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
     def index
-      @lecture = Lecture.find(params[:id])
+      @lecture = Lecture.find_by(params[:id])
       @review = @lecture.review
     end
 
     def new
-        @lecture = Lecture.find(params[:id])
+        @lecture = Lecture.find_by(params[:id])
         @review = Review.new
     end
 
     def edit
-      @lecture = Lecture.find(params[:id])
-      @review = Review.find(params[:id])
+      @lecture = Lecture.find_by(params[:id])
+      @review = Review.find_by(params[:id])
     end
+    
+    def update
+      @review = current_user.review.find_by(params[:id])
+        if @review.update(review_params)
+          flash[:notice] = "レビューの更新に成功しました"
+          redirect_to reviews_index_lecture_path
+        else
+          flash[:notice] = "レビューの更新に失敗しました"
+          render 'edit'
+        end
+    end
+    
 
     def create
-        @lecture = Lecture.find(params[:id])
+        @lecture = Lecture.find_by(params[:id])
     
         @review = @lecture.review.new(review_params)
         @review.user = current_user 
@@ -26,6 +38,17 @@ class ReviewsController < ApplicationController
         else
           render 'new'
         end
+    end
+
+    def destroy
+      @review = current_user.review.find_by(params[:id])
+      if @review.destroy
+          flash[:notice] = 'レビューが削除されました'
+          redirect_to lectures_path
+      else
+          flash[:notice] = 'レビューの削除に失敗しました'
+          redirect_to lectures_path
+      end
     end
     
     private
