@@ -65,3 +65,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 
 gem "dotenv-rails"
+
+group :production do
+  gem "pg", "~> 1.4"
+end
