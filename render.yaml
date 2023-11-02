@@ -1,21 +1,18 @@
 databases:
   - name: hamatan
     databaseName: hamatan
-    user: miyazaki
-    region: singapore
+    user: hamatan_user
 
 services:
   - type: web
     name: hamatan
-    env: ruby
-    region: singapore
-    plan: free
+    runtime: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}"
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
-      - key: DATABASE_URL
+      - key: "postgres://hamatan_user:xx7pW7zMaXCAmOeWLQQvEGlJ7qj62esU@dpg-cl12p5as1bgc73e3enjg-a.singapore-postgres.render.com/hamatan"
         fromDatabase:
-          name: rails7_sample_staginhamatan
+          name: hamatan
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false

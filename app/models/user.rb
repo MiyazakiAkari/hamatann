@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :lecture
   has_many :review
+
+  validates :email, presence: true, format: { with: /\A[\w+\-.]+@shizuoka\.ac\.jp\z/i, message: "は大学のメールアドレスである必要があります" }
 end
