@@ -14,5 +14,5 @@ services:
         fromDatabase:
           name: hamatan
           property: connectionString
-      - key: RAILS_MASTER_KEY
+      - key: "b36f569902f20d7fb52b329d353e7747"
         sync: false
