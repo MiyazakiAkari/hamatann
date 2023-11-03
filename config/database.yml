@@ -79,8 +79,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+ 
   <<: *default
-  url: <%= 'postgres://hamatan_user:xx7pW7zMaXCAmOeWLQQvEGlJ7qj62esU@dpg-cl12p5as1bgc73e3enjg-a.singapore-postgres.render.com/hamatan' %> 
-  database: mysite_production
-  username: mysite
-  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
