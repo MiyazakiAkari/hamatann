@@ -3815,11 +3815,6 @@ detect-node@^2.0.4:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.1.0.tgz#c9c70775a49c3d03bc2c06d9a73be550f978f8b1"
   integrity sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==
 
-"develop@NODE_OPTIONS='--openssl-legacy-provider' gatsby develop":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/develop/-/develop-1.0.0.tgz#49309cd343988923b6535cf4555ce9f4804c7c71"
-  integrity sha512-leTJgHtGsEJLxkm7vfAkqJizTbMDxi8qCE+xjoiLsYglhvS4HIok0DlaGBn3oGn9DLKLuBQn7C7V3uV82yDRCw==
-
 dezalgo@^1.0.0:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/dezalgo/-/dezalgo-1.0.4.tgz#751235260469084c132157dfa857f386d4c33d81"

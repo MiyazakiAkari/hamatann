@@ -14,6 +14,11 @@ module.exports = {
       // その他の必要に応じてポリフィルが必要なモジュール
     }
   },
+  node: {
+    global: false, // 'global' のポリフィルを無効化
+    __filename: false, // '__filename' のポリフィルを無効化
+    __dirname: false, // '__dirname' のポリフィルを無効化
+  },
   // ビルド後のファイルの出力設定
   output: {
     path: path.resolve(__dirname, 'dist'), // 出力ディレクトリの絶対パス
