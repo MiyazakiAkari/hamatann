@@ -4,6 +4,16 @@ const path = require('path');
 module.exports = {
   // ビルドの起点となるファイルの設定
   entry: './path/to/your/entry/file.js',
+  resolve: {
+    fallback: {
+      "dgram": false,
+      "fs": false,
+      "net": false,
+      "tls": false,
+      "child_process": false,
+      // その他の必要に応じてポリフィルが必要なモジュール
+    }
+  },
   // ビルド後のファイルの出力設定
   output: {
     path: path.resolve(__dirname, 'dist'), // 出力ディレクトリの絶対パス
